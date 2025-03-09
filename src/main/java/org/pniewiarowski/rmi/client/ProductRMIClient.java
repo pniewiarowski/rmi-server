@@ -1,20 +1,17 @@
 package org.pniewiarowski.rmi.client;
 
-import org.pniewiarowski.rmi.server.definition.server.ProductRMIServerInterface;
+import org.pniewiarowski.rmi.server.definition.ProductRMIServerInterface;
 
 import java.rmi.Naming;
 
 public class ProductRMIClient {
-    /**
-     * Binding for RMI server.
-     */
-    private final static String PRODUCT_BINDING_NAME = "//localhost/ProductRMIServer";
+    private final static String BINDING_NAME = "//localhost/ProductRMIServer";
 
     public static void main(String[] args) {
         try {
             System.setProperty("java.security.policy", "security.policy");
 
-            var productRMIRemote = (ProductRMIServerInterface) Naming.lookup(PRODUCT_BINDING_NAME);
+            var productRMIRemote = (ProductRMIServerInterface) Naming.lookup(BINDING_NAME);
             var getCollectionOfProductsResult = productRMIRemote.findAllProducts();
             var getProductByIDResult = productRMIRemote.findProductByID(3);
 

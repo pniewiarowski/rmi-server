@@ -1,6 +1,6 @@
-package org.pniewiarowski.rmi.server;
+package org.pniewiarowski.rmi.logger;
 
-import org.pniewiarowski.rmi.server.definition.LoggerInterface;
+import org.pniewiarowski.rmi.logger.definition.LoggerInterface;
 
 public class Logger implements LoggerInterface {
     @Override

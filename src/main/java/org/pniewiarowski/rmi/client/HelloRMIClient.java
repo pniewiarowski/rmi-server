@@ -1,20 +1,17 @@
 package org.pniewiarowski.rmi.client;
 
-import org.pniewiarowski.rmi.server.definition.server.HelloRMIServerInterface;
+import org.pniewiarowski.rmi.server.definition.HelloRMIServerInterface;
 
 import java.rmi.Naming;
 
 public class HelloRMIClient {
-    /**
-     * Binding for RMI server.
-     */
-    private final static String HELLO_BINDING_NAME = "//localhost/HelloRMIServer";
+    private final static String BINDING_NAME = "//localhost/HelloRMIServer";
 
     public static void main(String[] args) {
         try {
             System.setProperty("java.security.policy", "security.policy");
 
-            var helloRMIRemote = (HelloRMIServerInterface) Naming.lookup(HELLO_BINDING_NAME);
+            var helloRMIRemote = (HelloRMIServerInterface) Naming.lookup(BINDING_NAME);
             var name = "Paweł";
             var resultForSayHelloMethod = helloRMIRemote.sayHello(name);
 

@@ -2,9 +2,9 @@ package org.pniewiarowski.rmi.server.server;
 
 import org.pniewiarowski.rmi.product.ProductMock;
 import org.pniewiarowski.rmi.product.ProductModel;
-import org.pniewiarowski.rmi.server.definition.LocalTimeInterface;
-import org.pniewiarowski.rmi.server.definition.LoggerInterface;
-import org.pniewiarowski.rmi.server.definition.server.ProductRMIServerInterface;
+import org.pniewiarowski.rmi.time.definition.LocalTimeInterface;
+import org.pniewiarowski.rmi.logger.definition.LoggerInterface;
+import org.pniewiarowski.rmi.server.definition.ProductRMIServerInterface;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

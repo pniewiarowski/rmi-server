@@ -1,9 +1,9 @@
 package org.pniewiarowski.rmi.server.server;
 
 import org.pniewiarowski.rmi.calculator.definition.CalculatorInterface;
-import org.pniewiarowski.rmi.server.definition.LocalTimeInterface;
-import org.pniewiarowski.rmi.server.definition.LoggerInterface;
-import org.pniewiarowski.rmi.server.definition.server.CalculatorRMIServerInterface;
+import org.pniewiarowski.rmi.time.definition.LocalTimeInterface;
+import org.pniewiarowski.rmi.logger.definition.LoggerInterface;
+import org.pniewiarowski.rmi.server.definition.CalculatorRMIServerInterface;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

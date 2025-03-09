@@ -1,4 +1,4 @@
-package org.pniewiarowski.rmi.server.definition;
+package org.pniewiarowski.rmi.time.definition;
 
 /**
  * Provides an interface for retrieving the current local time.

@@ -1,6 +1,6 @@
-package org.pniewiarowski.rmi.server;
+package org.pniewiarowski.rmi.time;
 
-import org.pniewiarowski.rmi.server.definition.LocalTimeInterface;
+import org.pniewiarowski.rmi.time.definition.LocalTimeInterface;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

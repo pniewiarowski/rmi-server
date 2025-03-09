@@ -1,4 +1,4 @@
-package org.pniewiarowski.rmi.server.definition;
+package org.pniewiarowski.rmi.logger.definition;
 
 /**
  * Provides an interface for logging informational messages.

@@ -1,20 +1,17 @@
 package org.pniewiarowski.rmi.client;
 
-import org.pniewiarowski.rmi.server.definition.server.CalculatorRMIServerInterface;
+import org.pniewiarowski.rmi.server.definition.CalculatorRMIServerInterface;
 
 import java.rmi.Naming;
 
 public class CalculatorRMIClient {
-    /**
-     * Binding for RMI server.
-     */
-    private final static String CALCULATOR_BINDING_NAME = "//localhost/CalculatorRMIServer";
+    private final static String BINDING_NAME = "//localhost/CalculatorRMIServer";
 
     public static void main(String[] args) {
         try {
             System.setProperty("java.security.policy", "security.policy");
 
-            var calculatorRMIRemote = (CalculatorRMIServerInterface) Naming.lookup(CALCULATOR_BINDING_NAME);
+            var calculatorRMIRemote = (CalculatorRMIServerInterface) Naming.lookup(BINDING_NAME);
             var additionResult = calculatorRMIRemote.addition(2, 2, 5, 10);
             var subtractResult = calculatorRMIRemote.subtract(100, 10, 10);
             var multiplyResult = calculatorRMIRemote.multiply(10, 10, 10, 2);

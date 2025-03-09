@@ -1,4 +1,4 @@
-package org.pniewiarowski.rmi.server.definition.server;
+package org.pniewiarowski.rmi.server.definition;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
