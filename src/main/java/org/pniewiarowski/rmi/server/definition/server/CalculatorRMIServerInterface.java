@@ -1,19 +1,9 @@
-package org.pniewiarowski.rmi.server.definition;
+package org.pniewiarowski.rmi.server.definition.server;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface RMIServerInterface extends Remote {
-    /**
-     * Greets the user with a personalized hello message.
-     *
-     * @param name The name of the person to greet.
-     *
-     * @return A greeting message that includes the provided name.
-     * @throws RemoteException If there is an issue with the remote communication.
-     */
-    public String sayHello(String name) throws RemoteException;
-
+public interface CalculatorRMIServerInterface extends Remote {
     /**
      * Adds the given values together.
      *
@@ -53,7 +43,8 @@ public interface RMIServerInterface extends Remote {
      *
      * @return The result of the division.
      * @throws ArithmeticException If division by zero is attempted.
-     * @throws RemoteException     If there is an issue with the remote communication.
+     * @throws RemoteException If there is an issue with the remote communication.
      */
     public float divide(float base, float... values) throws RemoteException, ArithmeticException;
+
 }

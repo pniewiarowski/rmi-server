@@ -1,6 +1,9 @@
 package org.pniewiarowski.rmi.server;
 
 import org.pniewiarowski.rmi.calculator.Calculator;
+import org.pniewiarowski.rmi.server.server.CalculatorRMIServer;
+import org.pniewiarowski.rmi.server.server.HelloRMIServer;
+import org.pniewiarowski.rmi.server.server.ProductRMIServer;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -12,9 +15,11 @@ public class Main {
     private final static int PORT = 1099;
 
     /**
-     * The RMI binding name that clients will use to look up the server object.
+     * Binding for RMI servers.
      */
-    private final static String BINDING_NAME = "//localhost/RMIServer";
+    private final static String HELLO_BINDING_NAME = "//localhost/HelloRMIServer";
+    private final static String CALCULATOR_BINDING_NAME = "//localhost/CalculatorRMIServer";
+    private final static String PRODUCT_BINDING_NAME = "//localhost/ProductRMIServer";
 
     public static void main(String[] args) {
         try {
@@ -25,11 +30,15 @@ public class Main {
             var localTime = new LocalTime();
             var logger = new Logger();
 
-            var server = new RMIServer(calculator, localTime, logger);
+            var helloRMIServer = new HelloRMIServer(localTime, logger);
+            var calculatorRMIServer = new CalculatorRMIServer(localTime, logger, calculator);
+            var productRMIServer = new ProductRMIServer(localTime, logger);
 
-            Naming.rebind(BINDING_NAME, server);
+            Naming.rebind(HELLO_BINDING_NAME, helloRMIServer);
+            Naming.rebind(CALCULATOR_BINDING_NAME, calculatorRMIServer);
+            Naming.rebind(PRODUCT_BINDING_NAME, productRMIServer);
 
-            var message = String.format("RMIServer instance listening on port %d...", PORT);
+            var message = String.format("RMIServers instances listening on port %d...", PORT);
             System.out.println(message);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
